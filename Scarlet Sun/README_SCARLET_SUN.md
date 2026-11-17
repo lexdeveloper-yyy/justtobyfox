@@ -1,48 +1,56 @@
 # Scarlet Sun
 
-**«Scarlet Sun»** — кроссовер-аранжировка, переносящая все оригинальные лейтмотивы композиции *Sunset of Seven Suns* (`sunset of the seven suns.flp`) в звуковой мир, барочно-маршевый грув, тональность, гармонический стиль и полный оркестровый инструментарий *Scarlet Forest* (`19. scarlet forest.flp`).
-
-## Основные параметры проекта
-
-- **FL Studio проект:** `Scarlet Sun/Scarlet Sun.flp` (построен напрямую поверх шаблона FL Studio 12.5.1.165 из `Scarlet Sun )/19. scarlet forest.flp`)
-- **Синхронизированный MIDI-экспорт:** `Scarlet Sun/Scarlet Sun.mid` (полное потактовое и понотное совпадение с FLP — `4 244` ноты)
-- **Темп / размер / PPQ:** `120.0 BPM`, `4/4`, `PPQ = 96`
-- **Тональность:** `F# minor / A major` (все лейтмотивы *Sunset of Seven Suns* транспонированы на `−1` полутон из `G minor` в родную тональность *Scarlet Forest*)
-- **Форма и длительность:** `64 такта` (`2 мин 08 сек` / `24 576` тиков), полностью отражающая 6-секционную драматургию `19. scarlet forest.flp`
+**«Scarlet Sun»** — кроссовер-аранжировка, объединяющая все оригинальные лейтмотивы композиции *Sunset of Seven Suns* (`sunset of the seven suns.flp`) с барочно-маршевой гармонией, тональностью `F# minor / A major` (`120.0 BPM`, `4/4`, `PPQ = 96`, `64 такта`) и оркестровым тембром *Scarlet Forest* (`19. scarlet forest.flp`).
 
 ---
 
-## Сохранение инструментария и микшера *Scarlet Forest*
+## Состав релиза (2 готовых FLP-проекта + MIDI)
 
-Все 18 инструментальных каналов (`CH 01..18` на базе `Fruity soundfont player`) и вся микшерная цепь (`Insert 2..11` с исходными эквалайзерами, реверберацией, дилеем, стерео-энхансером и мастеринг-лимитером) полностью сохранены из `Scarlet Sun )/19. scarlet forest.flp`:
+Проект собран в двух полностью независимых вариантах с чистым встроенным микшером FL Studio (**0 сторонних VST / `Fruity Wrapper`**) и с нуля перенесён в FLP по проверенному пайплайну **`.mid` -> именованные паттерны FLP**:
 
-- `CH 01 bassoon staccato`, `CH 02 c bass detache`, `CH 03 c bass pizz`, `CH 04 celli pizz`, `CH 05 celli detache`, `CH 06 th pizz`, `CH 07 bassoon stereo`
-- `CH 08 kit` (`C2` бочка, `E2` акцентный удар, `G2` офф-бит хэт, `D3` малый/рим, `G3` 16-я сбивка, `G#3` тарелка-крэш)
-- `CH 09 oboe legato`, `CH 10 oboe stac`, `CH 11 th oboe`, `CH 12 clarinett staccato`, `CH 13 piccalo staccato`
-- `CH 14 vins legato`, `CH 15 th strings`, `CH 16 piano`, `CH 17 piano #2` (`Insert 11 end piano`), `CH 18 glockenspiel`
+1. **`Scarlet Sun/Scarlet Sun.flp`** — **Вариант 1 (оригинальный оркестровый темплейт *Scarlet Forest*)**
+   - `19` каналов (`CH 01..18` активны: `squidfont_orchestral.sf2`, `THInst.sf2`, `SGM-V2.01.sf2`, `specifically toby\glockenspiel.sf2`; `CH 00` отвязан и замьючен без референсного аудиофайла).
+   - `50` именованных паттернов (`New`, `Name`, `Notes`), `50` клипов плейлиста (`Track 2..8`), `4 627` нот.
+   - Оригинальная маршрутизация и эффекты микшера *Scarlet Forest* с заменой сторонних VST-слотов (`FabFilter Pro-Q 3`, `Bertom_PhantomCenter`, `Fruity Reeverb.dll`) на встроенные плагины FL Studio (`Fruity Parametric EQ 2`, `Fruity Convolver`, `Fruity Delay 2`, `Fruity Stereo Enhancer`, `Fruity Limiter`).
 
-Слоты `CH 00` и дорожка плейлиста 1 (референсное аудио из исходника *Scarlet Forest*) отключены и удалены из плейлиста.
+2. **`Scarlet Sun/Scarlet Sun (Universal).zip`** *(и распакованная папка `Scarlet Sun/Scarlet Sun (Universal)/`)* — **Вариант 2 (универсальный Zipped Loop Package)**
+   - Не требует `squidfont_orchestral.sf2`, `glockenspiel.sf2` и никаких сторонних VST-плагинов: работает на стандартных звуках **`SGM-V2.01.sf2`** + **`THInst.sf2`** (`celesta`, `th pizz`, `th oboe`, `th strings`) + встроенном микшере FL Studio.
+   - Включает `23` канала (`4 859` нот): дополнительно добавлены аутентичные партии **`shamisen`** (`SGM p107`) и **`pan flute`** (`SGM p76`), а также живые удары тарелок **`FLS Crash 02a.wav` / `FLS Crash 02b.wav`** из *Sunset of Seven Suns* (ударные перемаплены на GM *Power Kit* `p145` с `pitch_shift = 0`).
+   - Внутрь архива `.zip` упакованы сам `.flp` и все локальные WAV/WV-ресурсы (`FLS Crash 02a.wav`, `FLS Crash 02b.wav`, `IMP Evnt - Room Bright.wv`, `IMP Lex - Close Warm Room.wv`) — открывается в FL Studio напрямую через `File -> Open`.
+
+3. **`Scarlet Sun/Scarlet Sun.mid`** — синхронизированный MIDI-файл (`19` треков, `4 627` нот, `120.0 BPM`, `PPQ = 96`).
+
+---
+
+## Что было исправлено по сравнению с первой версией
+
+- **Восстановлено воспроизведение клипов в FL Studio:** убраны `NaN`-смещения клипов плейлиста (`0000c07f` -> корректные `-1.0` / `000080bf` на каждом из 50 клипов, `track_rvidx = 199 - track_iid`, `CurrentlySelected = 1`).
+- **Перестроены паттерны по стандарту *Friend Field* / *Rude Buster*:** каждый из `50` паттернов имеет строго `3` события (`PatternID.New`, `PatternID.Name`, `PatternID.Notes`) и понятные имена по секциям и ролям (`Bass | 01 Intro A`, `Winds | 04A Drop A`, и т.д.).
+- **Отвязан референс `CH 00`:** сняты `IsEnabled`, `IsLocked` и `SamplePath`, дорожка `Track 1` отключена.
+- **Очищен микшер от сторонних VST:** все `Fruity Wrapper` слоты удалены и заменены на штатные эффекты FL Studio (`Fruity Convolver`, `Fruity Parametric EQ 2`, `Fruity Delay 2`, `Fruity Limiter`).
+- **Вычищена гармоническая ткань и добавлены живые фразы *Sunset*:** устранены все диссонансы на малую секунду (`0` конфликтов в `4 627` нотах), расширен мелодический контрапункт деревянных духовых, оркестровых пиццикато и фортепианной коды.
 
 ---
 
 ## Структура аранжировки (B01–B64)
 
-| Такты | Секция и оркестровка (*Scarlet Forest*) | Лейтмотив (*Sunset of Seven Suns*, в `F#m`) | Барочная регармонизация |
-| :--- | :--- | :--- | :--- |
-| **B01–B08** | Тихое вступление: `c bass`, `bassoon staccato`, `celli pizz`, `th pizz` (без ударных и смычковых) | **Лейтмотив 1A**: задумчивая мелодия `pan flute` (`G#4 -> A4 -> B4 -> E4 C#5`) на `th oboe` + 120 BPM адаптация остинато `Mandolin/shamisen` на `piano` и `clarinett staccato` | `F#m -> A/C# -> Bm -> E–C#7/F` \| `F#m -> A/E -> B7/D# -> Dmaj7–C#7/F` |
-| **B09–B16** | Вступление смычковых (`vins legato`, `th strings`), ударных ещё нет | **Лейтмотив 1B**: парящая линия `Tibeten Flute 2` (`E5 -> F#5 -> B4 -> C#5 E5 \| G#4 -> A4 E5 -> F#5 -> C#5 B4`) поверх сохраняющегося остинато и нижнего голоса `th oboe` | `F#m -> F#m/C# -> Bm -> A/E–E` \| `F#m -> A/E -> B7/D# -> Dmaj7–C#7/F` |
-| **B17–B24** | Выход `bassoon stereo` на басы, плотное легато струнных; в **B24** сбивка `kit G3` (`1/16`) | **Лейтмотив 2 (Главная тема, 1-е проведение)**: `B4 -> E4 -> B4 C#5 B4 A4 ...` на `vins legato + th strings` с подголоском `french horn` на `th oboe` | `Bm7 -> E6/C#m7 -> F#m11/A/E -> Bm7/D–E7` \| `Em7/D -> A/C# -> F#m–B7/D# -> Dmaj7–Bm/D–C#7/F` |
-| **B25–B40** | Полный маршевый грув `kit`, офф-бит `bassoon stereo + celli pizz + th pizz`, искрящиеся контрапункты `piccalo staccato` | **Лейтмотив 2 (полное 16-тактовое развитие B09–24 оригинала)**: мощные октавы струнных, октавный взлёт на `B34`/`B38` и верхний контр-голос `Tibeten Flute 2` на `oboe legato` в `B33–40` | Двойной цикл барочной регармонизации `Bm7 -> ... -> Dmaj7–Bm/D–C#7/F` с нисходящими басами |
-| **B41–B48** | Секция B (`celli detache + celli pizz`, марш без крэша, диалоги `oboe stac`, `clarinett staccato`, `piccalo staccato`, `glockenspiel`) | **Лейтмотив 3**: сольные арпеджио и двухголосие гитарно-фортепианной связки (`E4 -> C#5+E5 -> F#5+A5 ...`) на `piano` + кадансовый мостик `oboe legato` в **B48** | Восходящая прогрессия `Bm -> C#m7 -> Dmaj7 -> E–C#7/F` (×2) |
-| **B49–B56** | Продолжение Секции B с тёплым пэдом `th strings`, завершается стоп-таймом и сбивкой `kit G3` в **B56** | **Лейтмотив 4**: эмоциональный двухголосный дуэт (`Sax + Pan Flute 2`) в исполнении `oboe legato` и `th oboe` поверх арпеджио Лейтмотива 3 и акцентов `glockenspiel` | `Bm -> C#m7 -> Dmaj7 -> E–C#7/F` (×2) |
-| **B57–B64** | Секция C (Кульминация и Кода): тяжёлые акценты `kit` (`E2 + G#3`), полный оркестр, фермата в **B63** и хрустальное соло `piano #2` (`Insert 11`) + `th oboe` в **B64** | **Финальный триумф Главной темы** (`B57–63`) и нежное прощальное эхо мотива *Sunset* (`E5 -> F#5 -> E5 -> D5 -> C#5 -> A4`) в сольной коде **B64** | `Dmaj7 -> Bm7/D–E7 -> C#m7 -> F#m–E7 -> Bm7 -> C#m7–A/C# -> Dmaj7 -> A/F#m9` |
+| Такты | Секция | Лейтмотив (*Sunset of Seven Suns* в `F#m`) и оркестровка |
+| :--- | :--- | :--- |
+| **B01–B08** | `01 Intro A` | **Лейтмотив 1A**: задумчивая тема на `th oboe` и `pan flute` поверх арпеджио `piano`, `clarinett staccato` / `shamisen`, мягкого баса `c bass + bassoon` и `celli pizz` |
+| **B09–B16** | `02 Intro B` | **Лейтмотив 1B**: вступление смычковых (`vins legato`, `th strings`), парящая флейтово-гобойная линия на `oboe legato + th oboe (+ pan flute)` |
+| **B17–B24** | `03 Pre-Drop A1` | **Лейтмотив 2 (1-е проведение)**: выход `bassoon stereo`, оркестровый напор струнных, барочный контрапункт и сбивка ударных в **B24** |
+| **B25–B32** | `04A Drop A` | **Лейтмотив 2 (полный дроп)**: маршевый грув `kit`, офф-бит `bassoon stereo + celli pizz + th pizz`, искрящийся `piccalo staccato` и удары тарелок в **B25 / B29** |
+| **B33–B40** | `04B Drop Climax` | **Кульминация дропа**: октавный взлёт струнных на `B34 / B38`, верхний контр-голос `oboe legato` и усиленная перкуссия |
+| **B41–B48** | `05 Section B1` | **Лейтмотив 3**: кантиленные диалоги `oboe stac`, `clarinett staccato`, `piccalo staccato` и `glockenspiel / celesta` поверх фортепианных фигураций |
+| **B49–B56** | `06 Section B2` | **Лейтмотив 4**: двухголосный дуэт `oboe legato + th oboe (+ pan flute)` с тёплым подкладом `th strings`, стоп-тайм и сбивка в **B56** |
+| **B57–B64** | `07 Finale & Coda` | **Финальный триумф Главной темы** (`B57–B62`), оркестровая фермата на `C#7/F` в **B63** и прощальная сольная кода на `piano #2` (`Insert 11`) + `th oboe` в **B64** |
 
 ---
 
 ## Проверка качества (Automated Audits)
 
-- `Track overlaps: 0` (нет пересечений клипов ни на одной из дорожек плейлиста `Track 2..11`)
-- `Note overlaps: 0` (нет наложений нот на одном канале/высоте)
-- `Same-octave minor-2nd clashes: 0` (полная проверка по сетке 1/16 долей во всех 64 тактах)
-- `FLP ↔ MIDI parity`: `4 244 / 4 244` нот совпадают 1-в-1 (`128.22s`, `120.0 BPM`, `PPQ = 96`)
-- Все 18 инструментов проверены по рабочим диапазонам, панорамам и велосити-кривым оригинального `19. scarlet forest.flp` (включая `glockenspiel vel=26`, `kit G#3 vel=20–24`, `piccalo staccato vel=50–64`).
+- `Track overlaps: 0` (нет пересечений клипов на дорожках плейлиста `Track 2..8`)
+- `Note overlaps: 0` (нет наложений нот на одном канале и высоте)
+- `Minor-2nd clashes (diff == 1): 0` (проверено по всем тактам и инструментам)
+- `Playlist start_offset / end_offset`: `100%` клипов (`50/50`) в обоих проектах имеют точные байты `000080bf000080bf` (`-1.0 / -1.0`)
+- `Fruity Wrapper (3rd-party VST) count`: `0` в обоих проектах (`Scarlet Sun.flp` и `Scarlet Sun (Universal).flp`)
